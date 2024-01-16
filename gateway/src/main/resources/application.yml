@@ -12,12 +12,14 @@ spring:
             #uri: lb://author-service
             predicates:
               - Path=/author/**
-            filters:
-              - PrefixPath=/api/v1
+              - Before=2024-01-17T00:00:00.000-05:00
+
           - id: book-service
             uri: http://localhost:8002
             predicates:
               - Path=/book/**
+              - After=2024-01-16T00:00:00.000-05:00
+              - Header=X-Custom-Header, custom-value
             filters:
               - PrefixPath=/api/v1
 
