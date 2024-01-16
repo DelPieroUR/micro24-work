@@ -1,0 +1,18 @@
+#server.port: 8061
+#spring.application.name: book-service
+#eureka.client.serviceUrl.defaultZone: http://localhost:8761/eureka/
+#spring:
+#  profiles:
+#    active: other
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://jirasyncdb.cfppua5tmn1g.us-west-2.rds.amazonaws.com:3306/escuela_java_2024
+#    username: usuario
+#    password: password
+spring.application.name: book-service
+
+spring:
+  profiles:
+    active: dev,resttemplate
+  config:
+    import: configserver:http://localhost:8888

@@ -1,0 +1,11 @@
+server.port: 8888
+spring.application.name: config-server
+eureka.client.serviceUrl.defaultZone: http://localhost:8761/eureka/
+
+spring:
+  cloud.config.server.git:
+#    uri: file://C:\dev\Escuela_Java_2024\microservicios-config
+    uri: https://github.com/DelPieroUR/config-micro24
+    username: DelPieroUr
+    password: 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
+    default-label: master
